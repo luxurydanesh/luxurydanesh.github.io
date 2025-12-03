@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Daniel | تولدت مبارک دانیال</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Cinzel:wght@700;800&family=Orbitron:wght@700;800&family=Noto+Nastaliq+Urdu&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blood-red: #ff0033;
+            --dark-blood: #990000;
+            --black: #050505;
+            --dark-bg: #0a0a0a;
+            --glass: rgba(255, 0, 51, 0.1);
+            --glass-border: rgba(255, 0, 51, 0.3);
+            --text-light: #ffffff;
+            --text-dim: #cccccc;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Cinzel', 'Noto Nastaliq Urdu', serif;
+            background-color: var(--black);
+            color: var(--text-light);
+            overflow-x: hidden;
+            line-height: 1.8;
+        }
+        
+        .language-switcher {
+            position: fixed;
+            top: 25px;
+            right: 25px;
+            z-index: 10000;
+            background: rgba(255, 0, 51, 0.15);
+            backdrop-filter: blur(15px);
+            border-radius: 50px;
+            padding: 10px 20px;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 5px 20px rgba(255, 0, 51, 0.2);
+            display: flex;
+            gap: 10px;
+        }
+        
+        .lang-btn {
+            background: transparent;
+            color: var(--text-light);
+            border: none;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            font-size: 0.9rem;
+        }
+        
+        .lang-btn.active {
+            background: var(--blood-red);
+            box-shadow: 0 0 15px rgba(255, 0, 51, 0.5);
+        }
+        
+        .intro-page {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            background: 
+                linear-gradient(135deg, rgba(5, 5, 5, 0.95) 0%, rgba(10, 10, 10, 0.95) 100%),
+                url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ff0033' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+            backdrop-filter: blur(25px) brightness(0.9);
+            animation: introFadeOut 1s ease 5s forwards;
+        }
+        
+        .intro-content {
+            text-align: center;
+            padding: 40px;
+            border-radius: 30px;
+            background: rgba(255, 0, 51, 0.15);
+            backdrop-filter: blur(20px);
+            border: 2px solid var(--glass-border);
+            box-shadow: 
+                0 25px 50px rgba(255, 0, 51, 0.25),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            animation: introPulse 2s infinite alternate;
+            max-width: 800px;
+            margin: 0 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .intro-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255, 0, 51, 0.1), transparent);
+            z-index: -1;
+        }
+        
+        .intro-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 5.5rem;
+            color: var(--blood-red);
+            margin-bottom: 30px;
+            text-shadow: 
+                0 0 20px rgba(255, 0, 51, 0.8),
+                0 0 40px rgba(255, 0, 51, 0.6),
+                0 0 60px rgba(255, 0, 51, 0.4);
+            letter-spacing: 2px;
+            line-height: 1.2;
+            font-weight: 900;
+        }
+        
+        .intro-subtitle {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+        
+        .intro-english {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.2rem;
+            color: var(--blood-red);
+            margin-top: 20px;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-shadow: 0 0 15px rgba(255, 0, 51, 0.7);
+        }
+        
+        .blood-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255, 0, 51, 0.2) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(153, 0, 0, 0.25) 0%, transparent 40%);
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .blood-drips {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .blood-drip {
+            position: absolute;
+            width: 8px;
+            height: 120px;
+            background: linear-gradient(to bottom, var(--blood-red) 0%, rgba(153, 0, 0, 0.7) 60%, transparent 100%);
+            border-radius: 0 0 10px 10px;
+            top: -120px;
+            filter: blur(1px);
+            animation: fallingDrip 15s linear infinite;
+        }
+        
+        .main-content {
+            opacity: 0;
+            animation: contentFadeIn 1.5s ease 5.5s forwards;
+        }
+        
+        .page {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 100px 20px;
+            overflow: hidden;
+        }
+        
+        .blood-effect {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: linear-gradient(to top, rgba(255, 0, 51, 0.3) 0%, rgba(153, 0, 0, 0.2) 30%, transparent 70%);
+            z-index: 1;
+            transition: height 0.5s ease;
+        }
+        
+        .page-1 {
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(255, 0, 51, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(153, 0, 0, 0.2) 0%, transparent 40%),
+                linear-gradient(180deg, var(--black) 0%, var(--dark-bg) 100%);
+            backdrop-filter: blur(10px);
+        }
+        
+        .glass-card {
+            background: rgba(255, 0, 51, 0.12);
+            backdrop-filter: blur(25px);
+            border-radius: 30px;
+            padding: 60px;
+            border: 2px solid var(--glass-border);
+            box-shadow: 
+                0 25px 50px rgba(255, 0, 51, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15);
+            text-align: center;
+            max-width: 900px;
+            width: 90%;
+            position: relative;
+            overflow: hidden;
+            margin: 50px auto;
+            z-index: 2;
+        }
+        
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent 30%, rgba(255, 0, 51, 0.05) 100%);
+            z-index: -1;
+        }
+        
+        .heart-container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 40px auto 60px;
+            z-index: 2;
+        }
+        
+        .heart {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: var(--blood-red);
+            transform: rotate(45deg);
+            box-shadow: 
+                0 0 60px rgba(255, 0, 51, 0.9),
+                0 0 100px rgba(255, 0, 51, 0.7),
+                0 0 150px rgba(255, 0, 51, 0.5),
+                inset 0 0 40px rgba(255, 255, 255, 0.3);
+            animation: heartbeat 1.5s infinite ease-in-out;
+            border-radius: 25px;
+        }
+        
+        .heart::before,
+        .heart::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: var(--blood-red);
+            border-radius: 50%;
+        }
+        
+        .heart::before {
+            top: -50%;
+            left: 0;
+        }
+        
+        .heart::after {
+            top: 0;
+            left: -50%;
+        }
+        
+        .heart-veins {
+            position: absolute;
+            width: 120%;
+            height: 120%;
+            top: -10%;
+            left: -10%;
+            background: 
+                radial-gradient(circle, transparent 30%, rgba(153, 0, 0, 0.4) 70%),
+                url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20,100 Q50,70 80,100 T140,100' stroke='%23990000' stroke-width='2' fill='none' opacity='0.3'/%3E%3Cpath d='M60,120 Q90,90 120,120' stroke='%23990000' stroke-width='2' fill='none' opacity='0.3'/%3E%3C/svg%3E");
+            background-size: cover;
+            border-radius: 50%;
+            z-index: -1;
+            animation: pulseVeins 3s infinite alternate;
+        }
+        
+        .name-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 6rem;
+            background: linear-gradient(45deg, #ff0033, #ff3366, #ff0033);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin: 30px 0;
+            letter-spacing: 3px;
+            text-shadow: 0 0 20px rgba(255, 0, 51, 0.5);
+            font-weight: 900;
+        }
+        
+        .birthday-message {
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem;
+            color: var(--text-light);
+            margin-top: 40px;
+            line-height: 1.6;
+            max-width: 800px;
+        }
+        
+        .blood-text {
+            color: var(--blood-red);
+            font-weight: 800;
+        }
+        
+        .page-2 {
+            background: 
+                radial-gradient(circle at 30% 10%, rgba(153, 0, 0, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 70% 90%, rgba(255, 0, 51, 0.2) 0%, transparent 50%),
+                linear-gradient(0deg, var(--black) 0%, var(--dark-bg) 100%);
+            backdrop-filter: blur(15px);
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 40px;
+            width: 100%;
+            max-width: 1200px;
+            margin: 60px auto;
+        }
+        
+        .gallery-item {
+            background: rgba(255, 0, 51, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 15px 35px rgba(255, 0, 51, 0.15);
+            transition: all 0.5s ease;
+            text-align: center;
+            min-height: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-15px);
+            border-color: rgba(255, 0, 51, 0.6);
+            box-shadow: 
+                0 25px 50px rgba(255, 0, 51, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+        
+        .gallery-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--blood-red), var(--dark-blood));
+        }
+        
+        .gallery-icon {
+            font-size: 4rem;
+            color: var(--blood-red);
+            margin-bottom: 25px;
+            text-shadow: 0 0 15px rgba(255, 0, 51, 0.7);
+        }
+        
+        .gallery-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--text-light);
+            font-weight: 700;
+        }
+        
+        .gallery-text {
+            color: var(--text-dim);
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 80px;
+            color: var(--text-dim);
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 10%;
+            width: 80%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--blood-red), transparent);
+        }
+        
+        .creator {
+            color: var(--blood-red);
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin-top: 20px;
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 2px;
+        }
+        
+        @keyframes introFadeOut {
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+        
+        @keyframes introPulse {
+            0% { 
+                box-shadow: 
+                    0 25px 50px rgba(255, 0, 51, 0.25),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+                transform: scale(1);
+            }
+            100% { 
+                box-shadow: 
+                    0 35px 70px rgba(255, 0, 51, 0.35),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+                transform: scale(1.02);
+            }
+        }
+        
+        @keyframes contentFadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: rotate(45deg) scale(1); }
+            5% { transform: rotate(45deg) scale(1.1); }
+            10% { transform: rotate(45deg) scale(1); }
+            15% { transform: rotate(45deg) scale(1.15); }
+            20% { transform: rotate(45deg) scale(1); }
+            100% { transform: rotate(45deg) scale(1); }
+        }
+        
+        @keyframes pulseVeins {
+            0% { opacity: 0.7; transform: scale(1); }
+            100% { opacity: 1; transform: scale(1.05); }
+        }
+        
+        @keyframes fallingDrip {
+            0% { top: -120px; opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { top: 100vh; opacity: 0; }
+        }
+        
+        @media (max-width: 992px) {
+            .intro-title { font-size: 4rem; }
+            .intro-subtitle { font-size: 2rem; }
+            .intro-english { font-size: 1.8rem; }
+            .name-text { font-size: 4.5rem; }
+            .heart-container { width: 300px; height: 300px; }
+            .glass-card { padding: 40px; }
+            .gallery { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
+        }
+        
+        @media (max-width: 768px) {
+            .intro-title { font-size: 3.2rem; }
+            .intro-subtitle { font-size: 1.7rem; }
+            .intro-english { font-size: 1.5rem; }
+            .name-text { font-size: 3.5rem; }
+            .birthday-message { font-size: 1.8rem; }
+            .heart-container { width: 250px; height: 250px; }
+            .glass-card { padding: 30px; }
+            .gallery { grid-template-columns: 1fr; }
+            .language-switcher { top: 20px; right: 20px; padding: 8px 15px; }
+            .lang-btn { padding: 6px 15px; font-size: 0.8rem; }
+        }
+        
+        .lang-fa { direction: rtl; text-align: right; }
+        .lang-en { direction: ltr; text-align: left; font-family: 'Orbitron', 'Poppins', sans-serif; }
+        
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <div class="language-switcher">
+        <button class="lang-btn active" id="langFa">فارسی</button>
+        <button class="lang-btn" id="langEn">English</button>
+    </div>
+    
+    <div class="intro-page" id="introPage">
+        <div class="blood-overlay"></div>
+        <div class="blood-drips" id="bloodDrips"></div>
+        <div class="intro-content">
+            <h1 class="intro-title">خوش آمدی</h1>
+            <h2 class="intro-subtitle">تولدت مبارک دانیال</h2>
+            <h3 class="intro-english">WELCOME • HAPPY BIRTHDAY DANIEL</h3>
+        </div>
+    </div>
+    
+    <div class="main-content" id="mainContent">
+        <div class="blood-effect" id="bloodEffect"></div>
+        
+        <div class="page page-1">
+            <div class="glass-card">
+                <div class="heart-container">
+                    <div class="heart-veins"></div>
+                    <div class="heart"></div>
+                </div>
+                
+                <h1 class="name-text lang-fa">دانیال</h1>
+                <h1 class="name-text lang-en hidden">DANIEL</h1>
+                
+                <p class="birthday-message lang-fa">
+                    امروز روز توست! روزی که جهان به وجود <span class="blood-text">شما</span> افتخار می‌کند. 
+                    آرزومندم سالی پر از موفقیت، شادی و لحظه‌های <span class="blood-text">فراموش‌نشدنی</span> داشته باشی.
+                </p>
+                
+                <p class="birthday-message lang-en hidden">
+                    Today is your day! The day the world is proud of your <span class="blood-text">existence</span>. 
+                    I wish you a year full of success, happiness and <span class="blood-text">unforgettable</span> moments.
+                </p>
+            </div>
+        </div>
+        
+        <div class="page page-2">
+            <div class="container">
+                <div class="gallery">
+                    <div class="gallery-item">
+                        <div class="gallery-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <h3 class="gallery-title lang-fa">پادشاه روز</h3>
+                        <h3 class="gallery-title lang-en hidden">King of the Day</h3>
+                        <p class="gallery-text lang-fa">امروز تو پادشاه این جشنی! از هر لحظه‌اش لذت ببر.</p>
+                        <p class="gallery-text lang-en hidden">Today you are the king of this party! Enjoy every moment.</p>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <div class="gallery-icon">
+                            <i class="fas fa-glass-cheers"></i>
+                        </div>
+                        <h3 class="gallery-title lang-fa">جشن بی‌پایان</h3>
+                        <h3 class="gallery-title lang-en hidden">Endless Celebration</h3>
+                        <p class="gallery-text lang-fa">امسال پر از فرصت‌های جدید و شادی‌های بزرگ خواهد بود.</p>
+                        <p class="gallery-text lang-en hidden">This year will be full of new opportunities and great joys.</p>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <div class="gallery-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h3 class="gallery-title lang-fa">قلب تپنده</h3>
+                        <h3 class="gallery-title lang-en hidden">Beating Heart</h3>
+                        <p class="gallery-text lang-fa">تپش قلب‌های ما برای شادی توست. تولدت مبارک!</p>
+                        <p class="gallery-text lang-en hidden">Our heartbeats are for your happiness. Happy birthday!</p>
+                    </div>
+                </div>
+                
+                <div class="glass-card">
+                    <h2 class="lang-fa" style="font-size: 2.8rem; margin-bottom: 30px; color: var(--blood-red);">پیام ویژه برای دانیال عزیز</h2>
+                    <h2 class="lang-en hidden" style="font-size: 2.8rem; margin-bottom: 30px; color: var(--blood-red);">Special Message for Dear Daniel</h2>
+                    
+                    <p class="birthday-message lang-fa" style="font-size: 1.8rem;">
+                        دانیال عزیز، تولد تو برای ما یک جشن بزرگ است. 
+                        امیدوارم این سال جدید، سرشار از موفقیت‌های چشمگیر، 
+                        سلامتی فراوان و لحظه‌های شیرین باشد. 
+                        هر آنچه در قلب داری، به واقعیت بپیوندد. 
+                        <span class="blood-text">تولدت از صمیم قلب مبارک!</span>
+                    </p>
+                    
+                    <p class="birthday-message lang-en hidden" style="font-size: 1.8rem;">
+                        Dear Daniel, your birthday is a great celebration for us.
+                        I hope this new year is full of remarkable successes,
+                        abundant health and sweet moments.
+                        May everything in your heart come true.
+                        <span class="blood-text">Happy birthday from the bottom of our hearts!</span>
+                    </p>
+                </div>
+                
+                <div class="footer">
+                    <p class="lang-fa">این وبسایت به مناسبت تولد دانیال طراحی شده است</p>
+                    <p class="lang-en hidden">This website is designed for Daniel's birthday</p>
+                    <div class="creator">ارمین | TheKiller</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const introPage = document.getElementById('introPage');
+            const mainContent = document.getElementById('mainContent');
+            const bloodEffect = document.getElementById('bloodEffect');
+            const bloodDrips = document.getElementById('bloodDrips');
+            const langFaBtn = document.getElementById('langFa');
+            const langEnBtn = document.getElementById('langEn');
+            const faElements = document.querySelectorAll('.lang-fa');
+            const enElements = document.querySelectorAll('.lang-en');
+            
+            createBloodDrips();
+            
+            setTimeout(() => {
+                introPage.style.animation = 'introFadeOut 1.5s ease forwards';
+                
+                setTimeout(() => {
+                    introPage.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }, 1500);
+            }, 5000);
+            
+            function createBloodDrips() {
+                for (let i = 0; i < 15; i++) {
+                    const drip = document.createElement('div');
+                    drip.classList.add('blood-drip');
+                    
+                    const left = Math.random() * 100;
+                    const delay = Math.random() * 10;
+                    const duration = 10 + Math.random() * 10;
+                    
+                    drip.style.left = `${left}%`;
+                    drip.style.animationDelay = `${delay}s`;
+                    drip.style.animationDuration = `${duration}s`;
+                    
+                    bloodDrips.appendChild(drip);
+                }
+            }
+            
+            window.addEventListener('scroll', function() {
+                const scrollY = window.scrollY;
+                const windowHeight = window.innerHeight;
+                const documentHeight = document.documentElement.scrollHeight;
+                const scrollPercent = (scrollY / (documentHeight - windowHeight)) * 100;
+                
+                bloodEffect.style.height = `${scrollPercent * 0.8}%`;
+                
+                const heart = document.querySelector('.heart');
+                if (heart) {
+                    const scale = 1 + (scrollY / windowHeight) * 0.25;
+                    const rotation = 45 + (scrollY / windowHeight) * 8;
+                    heart.style.transform = `rotate(${rotation}deg) scale(${scale})`;
+                }
+            });
+            
+            langFaBtn.addEventListener('click', function() {
+                langFaBtn.classList.add('active');
+                langEnBtn.classList.remove('active');
+                
+                faElements.forEach(el => el.classList.remove('hidden'));
+                enElements.forEach(el => el.classList.add('hidden'));
+                
+                document.documentElement.dir = 'rtl';
+                document.documentElement.lang = 'fa';
+            });
+            
+            langEnBtn.addEventListener('click', function() {
+                langEnBtn.classList.add('active');
+                langFaBtn.classList.remove('active');
+                
+                enElements.forEach(el => el.classList.remove('hidden'));
+                faElements.forEach(el => el.classList.add('hidden'));
+                
+                document.documentElement.dir = 'ltr';
+                document.documentElement.lang = 'en';
+            });
+            
+            document.body.style.overflow = 'hidden';
+        });
+    </script>
+</body>
+</html>
